@@ -5,8 +5,11 @@ using namespace std;
 
 int fatorial(int num, int aux, int &total){
 
-
-    fatorial(num, aux-=1,  total);
+    if(aux>1){
+    	total*=aux;
+        fatorial(num, aux-=1,  total);
+    }
+    return 0;
 }
 
 //--------------
@@ -17,6 +20,8 @@ int main(){
     cin >> num;
 
     fatorial(num, num, total);
+    
+    cout << total << endl;
 
 
 }
